@@ -2,36 +2,55 @@
 title: Взаимодействие площадок по API
 ---
 
-\
-Эндпоинт для отправки запросов: Схема - POST https://api.migrant-exam.ru/Reports/Report
+Все обращения по API авторизуются с использованием схемы Basic Authorization
+
+с дополнительным указанием в заголовке "x-api-key".
+
+
+
+"x-api-key" - уникальный токен для запросов, который выдается каждой организации индивидуально,
+
+также как и Username и Password для реализации Базовой авторизации
+
+
+
+Эндпоинт для отправки запросов: Схема - POST <https://api.migrant-exam.ru/Reports/Report>
 
 Принимает content-type "application/json" со схемой:
 
 \{
 
-"reportId" : 1 (integer) (Необязательное поле, передается в том случае, если надо заменить ранее отправленный отчет)
+"**reportId**" : 1 (integer) (Необязательное поле, передается в том случае, если надо заменить ранее отправленный отчет)
 
-"examinationAreaId": 1 (integer) (Идентификатор площадки, предоставляется индивидуально каждой организации),
+"**examinationAreaId**": 1 (integer) (Идентификатор площадки, предоставляется индивидуально каждой организации),
 
-"periodStartDate": "2025-05-26" (string) (Дата начала отчетного периода. Должен быть обязательно понедельник),
+"**periodStartDate**": "2025-05-26" (string) (Дата начала отчетного периода. Должен быть обязательно понедельник),
 
-"periodEndDate": "2025-06-01" (string) (Дата окончания отчетного периода. Должно быть обязательно воскресенье этой же недели, что и Дата начала отчетного периода),
+"**periodEndDate**": "2025-06-01" (string) (Дата окончания отчетного периода. Должно быть обязательно воскресенье этой же недели, что и Дата начала отчетного периода),
 
-"noExamInSelectedPeriod": false (boolean true/false) (Если за выбранный промежуток не проводились экзамены - передается в значении True, иначе - False),
+"**noExamInSelectedPeriod**": false (boolean true/false) (Если за выбранный промежуток не проводились экзамены - передается в значении True, иначе - False),
 
-"examinationAreaDoesNotWork": false (boolean true/false) (Указывается в том, случае, если на текущий момент площадка не работает и в ближайшее время экзамены проводиться не будут),
+"**examinationAreaDoesNotWork**": false (boolean true/false) (Указывается в том, случае, если на текущий момент площадка не работает и в ближайшее время экзамены проводиться не будут),
 
-"patentNearestStartDate": "2025-07-05" (string) (Ближайшая дата старта экзамена с уровнем Патент/Разрешение на работу. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или "noPatentExamType" в значении True),
+"**patentNearestStartDate**": "2025-07-05" (string) (Ближайшая дата старта экзамена с уровнем Патент/Разрешение на работу. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или "noPatentExamType" в значении True),
 
-"noPatentExamType": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем Патент/Разрешение на работу. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
+"**noPatentExamType**": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем Патент/Разрешение на работу. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
 
-""temporaryResidenceNearestStartDate": "2025-07-10" (string) (Ближайшая дата старта экзамена с уровнем РВП. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или "noTemporaryResidenceExamType " в значении True),,
+"**temporaryResidenceNearestStartDate**": "2025-07-10" (string) (Ближайшая дата старта экзамена с уровнем РВП. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или " noTemporaryResidenceExamType " в значении True),
 
-"noTemporaryResidenceExamType": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем РВП. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
+"**noTemporaryResidenceExamType**": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем РВП. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
 
-"residencePermitNearestStartDate": "2025-07-15" (string) (Ближайшая дата старта экзамена с уровнем ВНЖ. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или "noResidencePermitExamType " в значении True),
+"**residencePermitNearestStartDate**": "2025-07-15" (string) (Ближайшая дата старта экзамена с уровнем ВНЖ. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или " noResidencePermitExamType " в значении True),
 
-"noResidencePermitExamType": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем ВНЖ. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
+"**noResidencePermitExamType**": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем ВНЖ. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
+
+"**citizenshipRussianLangNearestStartDate**": "2025-07-15" (string) (Ближайшая дата старта экзамена с уровнем Гражданство – русский язык. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или "noCitizenshipRussianLangExamType" в значении True),
+
+"**noCitizenshipRussianLangExamType**": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем Гражданство – русский язык. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
+
+"**citizenshipHistoryNearestStartDate**": "2025-07-15" (string) (Ближайшая дата старта экзамена с уровнем Гражданство – история и законодательство. Не передается, если были переданы параметры "examinationAreaDoesNotWork" или "noCitizenshipHistoryExamType" в значении True),
+
+"**noCitizenshipHistoryExamType**": false (boolean true/false) (Показывает, что в ближайшее время не будет экзаменов с уровнем Гражданство – история и законодательство. Не передается, если был передан параметр "examinationAreaDoesNotWork" в значении True),
 
 "comment": "Отчет по экзаменационной площадке за июнь 2025 года" (string) (Необязательное поле, просто как пометка к отчету),
 
@@ -43,7 +62,7 @@ title: Взаимодействие площадок по API
 
 "examDate" : "2025-05-28" (string) (Дата проведения экзамена),
 
-"migrationExamType" : 1 (integer) (Уровень экзамена. Список значений указан ниже),
+"migrationExamType" : 1 (integer) (Уровень экзамен. Список значений указан ниже),
 
 "migrationExamStatus": 1 (integer) (Статус сдачи экзамена. Список значений указан ниже)
 
@@ -53,7 +72,7 @@ title: Взаимодействие площадок по API
 
 }
 
-\\
+
 
 Возможные значения migrationExamType:
 
@@ -63,7 +82,7 @@ title: Взаимодействие площадок по API
 
 3 - ВНЖ
 
-\\
+
 
 Возможные значения migrationExamStatus:
 
@@ -71,7 +90,7 @@ title: Взаимодействие площадок по API
 
 2 - Не сдал
 
-\\
+
 
 В случае успешного приема и записи данных по API, в ответ будет возвращен статус OK (200) с телом ответа JSON вида:
 
@@ -81,7 +100,7 @@ title: Взаимодействие площадок по API
 
 }
 
-\\
+
 
 Если была передана некорректная модель данных JSON (не заполнены обязательные поля),
 
@@ -103,7 +122,7 @@ title: Взаимодействие площадок по API
 
 }
 
-\\
+
 
 Если какие-либо переданные параметры не прошли валидацию,
 
@@ -114,5 +133,3 @@ title: Взаимодействие площадок по API
 "error" : "Описание ошибки" (string) (Здесь могут быть различные ошибки, например, не была передана коллекция заявок за указанный период без выставления параметра "noExamInSelectedPeriod" в значении True)
 
 }
-
-Бла бла бла бла бла
