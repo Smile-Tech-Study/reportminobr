@@ -1,5 +1,5 @@
 ---
-order: 0.3
+order: 2
 title: Отправка данных по API
 ---
 
@@ -7,6 +7,6 @@ title: Отправка данных по API
 
 1. Сделать запрос в Минобрнауки России [rutest@minobrnauki.gov.ru](mailto:rutest@minobrnauki.gov.ru) и получить [данные для входа](./README/poluchenie-tokena-i-dannykh-dlya-vkhoda)
 
-2. Используя [инструкцию](./../vzaimodeistvie-ploshadok-po-api), отправлять данные по API в первый день рабочей недели с целью последующего формирования отчетности для Минобрнауки России.
+2. Используя [инструкцию](./vzaimodeistvie-ploshadok-po-api), отправлять данные по API в первый день рабочей недели с целью последующего формирования отчетности для Минобрнауки России.
 
 [view:hierarchy=none::::List]
