@@ -17,7 +17,7 @@ order: 1
 
 <figure>
 
-![](<./image (25).png>)
+![](<.gitbook/assets/image (25).png>)
 
 <figcaption>
 
@@ -33,7 +33,7 @@ order: 1
 
 <figure>
 
-![](<./image (9).png>)
+![](<.gitbook/assets/image (9).png>)
 
 <figcaption>
 
@@ -49,7 +49,7 @@ order: 1
 
 <figure>
 
-![](<./image (10).png>)
+![](<.gitbook/assets/image (10).png>)
 
 <figcaption>
 
@@ -63,7 +63,7 @@ order: 1
 
 <figure>
 
-![](<./image (16).png>)
+![](<.gitbook/assets/image (16).png>)
 
 <figcaption>
 
@@ -97,7 +97,7 @@ order: 1
 
 <figure>
 
-![](<./image (15).png>)
+![](<.gitbook/assets/image (15).png>)
 
 <figcaption>
 
@@ -139,7 +139,7 @@ order: 1
 
 <figure>
 
-![](<./image (17).png>)
+![](<.gitbook/assets/image (17).png>)
 
 <figcaption>
 
@@ -153,7 +153,7 @@ order: 1
 
 <figure>
 
-![](<./image (18).png>)
+![](<.gitbook/assets/image (18).png>)
 
 <figcaption>
 
@@ -167,7 +167,7 @@ order: 1
 
 <figure>
 
-![](<./image (6).png>)
+![](<.gitbook/assets/image (6).png>)
 
 <figcaption>
 
@@ -189,7 +189,7 @@ order: 1
 
 <figure>
 
-![](<./image (19).png>)
+![](<.gitbook/assets/image (19).png>)
 
 <figcaption>
 
